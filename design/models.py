@@ -22,3 +22,12 @@ class Project(models.Model):
     colors = models.ManyToManyField(colors)
     post_date = models.DateTimeField(auto_now_add=True)
     avatar = models.ImageField(upload_to='avatars/')
+
+    def __str__(self):
+        return self.title
+
+    @classmethod
+    def search_project(cls,search_term):
+        # projects = cls.objects.filter(Q(username__username=search_term) | Q(title__icontains=search_term) | Q(colors__colors=search_term) | Q(technologies__technologies=search_term) | Q(categories__categories=search_term) | Q(country__countries=search_term))
+        projects = cls.objects.filter(Q(username__username=search_term) | Q(title__icontains=search_term) | Q(country__countries=search_term) | Q(overall_score__icontains=search_term))
+        return projects
