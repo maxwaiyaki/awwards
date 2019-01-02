@@ -1,4 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
+from tinymce.models import HTMLField
+from django.db.models import Q
+
+import datetime as dt
 
 # Create your models here.
 class Project(models.Model):
@@ -51,3 +56,17 @@ class Rating(models.Model):
     overall_score = models.IntegerField(blank=True,default=0)
     project = models.ForeignKey(Project,on_delete=models.CASCADE)
     profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
+
+
+class categories(models.Model):
+    categories= models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.categories
+
+    def save_category(self):
+        self.save()
+
+    @classmethod
+    def delete_category(cls,categories):
+        cls.objects.filter(categories=categories).delete()
