@@ -87,3 +87,29 @@ class countries(models.Model):
     @classmethod
     def delete_country(cls,countries):
         cls.objects.filter(countries=countries).delete()
+
+class colors(models.Model):
+    colors = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.colors
+
+    def save_color(self):
+        self.save()
+
+    @classmethod
+    def delete_color(cls,colors):
+        cls.objects.filter(colors=colors).delete()
+
+class technologies(models.Model):
+    technologies = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.technologies
+
+    def save_technology(self):
+        self.save()
+
+    @classmethod
+    def delete_technology(cls,technologies):
+        cls.objects.filter(technologies=technologies).delete()
