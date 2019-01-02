@@ -24,3 +24,37 @@ def index(request):
         return redirect('create-profile')
 
     return render(request,'index.html',{"winners":winners,"profile":profile,"caraousel":caraousel,"date":date,"nominees":nominees,"directories":directories,"resources":resources,"resources2":resources2})
+
+@login_required(login_url='/accounts/login/')
+def create_profile(request):
+    current_user = request.user
+    if request.method=='POST':
+        form = ProfileForm(request.POST,request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.username = current_user
+
+            profile.save()
+        return redirect('Index')
+    else:
+        form=ProfileForm()
+
+    return render(request,'create_profile.html',{"form":form})
+
+@login_required(login_url='/accounts/login/')
+def new_project(request):
+    current_user = request.user
+    profile =Profile.objects.get(username=current_user)
+    if request.method =='POST':
+        form = ProjectForm(request.POST,request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.username = current_user
+            project.avatar = profile.avatar
+            project.country = profile.country
+
+            project.save()
+    else:
+        form = ProjectForm()
+
+    return render(request,'new_project.html',{"form":form})
