@@ -5,11 +5,11 @@ from django.conf.urls.static import static
 
 urlpatterns=[
     url(r'^$',views.index,name='Index'),
+    url(r'^site/(\d+)',views.site,name='site'),
     url(r'^create/profile$',views.create_profile, name='create-profile'),
     url(r'^new/project$',views.new_project, name='new-project'),
     url(r'^directory/',views.directory, name='directory'),
     url(r'^profile/',views.profile, name='profile'),
-    url(r'^site/(\d+)',views.site,name='site'),
     url(r'^search/',views.search_results, name='search_results'),
     url(r'^user/(?P<username>\w{0,50})',views.user_profile,name='user-profile'),
 

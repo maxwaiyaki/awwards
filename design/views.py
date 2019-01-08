@@ -35,7 +35,7 @@ def index(request):
     except ObjectDoesNotExist:
         return redirect('create-profile')
 
-    return render(request,'index.html',{"winners":winners,"profile":profile,"caraousel":caraousel,"date":date,"nominees":nominees,"directories":directories,"resources":resources,"resources2":resources2})
+    return render(request,'index.html',{"winners":winners,"profile":profile,"caraousel":caraousel, "date":date,"nominees":nominees,"directories":directories,"resources":resources,"resources2":resources2})
 
 @login_required(login_url='/accounts/login/')
 def create_profile(request):
@@ -77,9 +77,9 @@ def directory(request):
     profile =Profile.objects.get(username=current_user)
 
     winners=Project.objects.all()
-    caraousel = Project.objects.get(id=8)
+    # caraousel = Project.objects.get(id=8)
 
-    return render(request,'directory.html',{"winners":winners,"profile":profile,"caraousel":caraousel,"date":date})
+    return render(request,'directory.html',{"winners":winners,"profile":profile,"date":date})
 
 @login_required(login_url='/accounts/login/')
 def profile(request):

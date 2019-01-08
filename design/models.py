@@ -6,6 +6,62 @@ from django.db.models import Q
 import datetime as dt
 
 # Create your models here.
+class countries(models.Model):
+    countries = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.countries
+
+    class Meta:
+        ordering = ['countries']
+
+
+    def save_country(self):
+        self.save()
+
+    @classmethod
+    def delete_country(cls,countries):
+        cls.objects.filter(countries=countries).delete()
+class categories(models.Model):
+    categories= models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.categories
+
+    def save_category(self):
+        self.save()
+
+    @classmethod
+    def delete_category(cls,categories):
+        cls.objects.filter(categories=categories).delete()
+
+
+class colors(models.Model):
+    colors = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.colors
+
+    def save_color(self):
+        self.save()
+
+    @classmethod
+    def delete_color(cls,colors):
+        cls.objects.filter(colors=colors).delete()
+
+class technologies(models.Model):
+    technologies = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.technologies
+
+    def save_technology(self):
+        self.save()
+
+    @classmethod
+    def delete_technology(cls,technologies):
+        cls.objects.filter(technologies=technologies).delete()
+
 class Project(models.Model):
     title = models.CharField(max_length=150)
     landing_page = models.ImageField(upload_to='landingpage/')
@@ -57,59 +113,3 @@ class Rating(models.Model):
     project = models.ForeignKey(Project,on_delete=models.CASCADE)
     profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
 
-
-class categories(models.Model):
-    categories= models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.categories
-
-    def save_category(self):
-        self.save()
-
-    @classmethod
-    def delete_category(cls,categories):
-        cls.objects.filter(categories=categories).delete()
-
-class countries(models.Model):
-    countries = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.countries
-
-    class Meta:
-        ordering = ['countries']
-
-
-    def save_country(self):
-        self.save()
-
-    @classmethod
-    def delete_country(cls,countries):
-        cls.objects.filter(countries=countries).delete()
-
-class colors(models.Model):
-    colors = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.colors
-
-    def save_color(self):
-        self.save()
-
-    @classmethod
-    def delete_color(cls,colors):
-        cls.objects.filter(colors=colors).delete()
-
-class technologies(models.Model):
-    technologies = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.technologies
-
-    def save_technology(self):
-        self.save()
-
-    @classmethod
-    def delete_technology(cls,technologies):
-        cls.objects.filter(technologies=technologies).delete()
