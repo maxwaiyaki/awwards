@@ -6,92 +6,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <link rel="stylesheet" href="../static/css/navbar.css"> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
   </head>
 
   <body>
 
-<!-- <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    
-    <div class="row">
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <div class="" >
-           <ul class="nav navbar-nav">
-             <li><a href="{% url 'directory'%}">Directory</a>
-             </li>
-             <li><a href="{% url 'profile'%}">Profile</a>
-             </li>
-             <li><a href="/admin">Admin</a>
-             </li>
-
-             <li><a href="/logout">Logout</a>
-             </li>
-           </ul>
-
-         </div>
-      </div>
-
-    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-    </div>
-  </div>
-
-    
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-        <div class="aw-logo">
-        <a class="navbar-brand" href="/">
-          <img alt="Brand" src="{% static 'img/navbar.png' %}" width=150 height=35>
-        </a>
-      </div>
-      </div>
-
-
-      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-
-      <ul class="nav navbar-nav navbar-right">
-        <form class="navbar-form" role="search" action="{% url 'search_results'%}">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search For Inspiration" name="project">
-          </div>
-        </form>
-      </ul>
-    </div>
-  <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-    <div class="user-image" style="float:right; margin-right:-10px;">
-      <a href="/user/{{profile.username}}" style="color:black;text-decoration:none;margin:auto;">
-        <p style="font-size: 13px; font-weight:lighter;margin:auto;text-transform:uppercase;margin-left:-20px;">{{profile.username}}</p>
-      </a>
-      <img src="{{profile.avatar.url}}" class="gallery-image" style="margin:auto;"  width=8 height=8>
-      <a href="{% url 'new-project' %}" >
-        <button class="btn btn-success" style="height:70px;  margin-top: -6px;background-color:#49c5b6;border-radius:0;">SUBMIT YOUR SITE</button>
-      </a>
-
-    </div>
-
-  </div>
-
-    </div>
-
-  </div>
-</div>
-
-</nav> -->
 <div class="container-fluid" style="width:100%;">
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand bold" href="/">AWWWARDS</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -99,24 +23,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'directory'%}">Directory <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+          <a class="nav-link" href="{% url 'profile'%}">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link" href="/admin">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="/logout">Logout</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0 float-right" role="search" action="{% url 'search_results'%}" style="margin-right:-5%;">

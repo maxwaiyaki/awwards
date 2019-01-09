@@ -28,7 +28,10 @@
         {% csrf_token%}
         {% bootstrap_form form %}
         <div class="form-group text-center">
-          <input type="submit" class="btn btn-primary sign-up-button" value="Share">
+          <input type="submit" class="btn btn-outline-secondary" value="/" name="Post">
+          <!-- <button href="/" class="btn btn-outline-primary">Back</button> -->
+          <a class="btn btn-outline-primary" href="/">Back</a>
+          
         </div>
         <input type="hidden" name="next" value="{{next}}">
       </form>
