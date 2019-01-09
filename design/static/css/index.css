@@ -128,7 +128,20 @@ body{
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
   } */
-  
+  /* .pages{
+    margin-top: 25px;
+    display: inline-flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+  } */
+  .bold{
+    font-weight: bold;
+  }
   .professional{
     font-size: 40px;
     font-weight:bold;
