@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
   </head>
@@ -13,8 +14,22 @@
   <body>
 
 <div class="container-fluid" style="width:100%;">
+  <nav class="navbar navbar-light">
+      <span class="navbar-text text-dark">
+          The awards of design, creativity and innovation on the internet
+      </span>
+      <!-- <span class="navbar-text text-dark" id="english">
+        English
+      </span> -->
+      <div class="links" >
+        <a href="http://"><i class="fab fa-instagram"></i></a>
+        <a href="http://"><i class="fab fa-twitter"></i></a>
+        <a href="http://"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </nav>
+    <hr>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light" id="navbar-2">
       <a class="navbar-brand bold" href="/">AWWWARDS</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -48,12 +63,25 @@
         </a>
         <img src="{{profile.avatar.url}}" class="gallery-image" style="margin:auto;">
         <a href="{% url 'new-project' %}" >
-          <button class="btn btn-success" style="height:70px;  margin-top: -6px;background-color:#49c5b6;border-radius:0;">SUBMIT YOUR SITE</button>
+          <button class="btn btn-success font-weight-bold submit-max">SUBMIT YOUR SITE</button>
         </a>
   
       </div>
   </nav>
 </div>
-
+  <script>
+    window.onscroll = function() {myFunction()};
+    
+    var header = document.getElementById("navbar-2");
+    var sticky = header.offsetTop;
+    
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    }
+  </script>
   </body>
 </html>

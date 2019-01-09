@@ -1,41 +1,48 @@
 .navbar{
-    height:1000px;
-    background-color: #f4f7f6;
-    margin-bottom: 0px;
+  width: 100% !important;
+  margin-bottom: 0px;
+  background: #F3F7F6;
+  height: 7rem;
   }
   
-  .fas{
-    margin-top: 8px;
-    font-size: 24px;
+hr{
+  width: 100% !important;
+  margin: 0px;
+  max-width: 100%;
   }
-  .navbar-form{
-    margin-top:20px;
-  }
-  .form-control{
-    margin-left: 20%;
-  }
-  input{
-    width:50px;
-    height:2px;
-    color:#999;
-  }
-  .navbar-brand{
-    display: flex;
-    justify-content: center;
-  }
-  .navbar-brand img{
-    margin-left: 70px;
-    float: none;
-  }
-  .instagramlogo{
-    margin-top:1px;
-  }
-  
-  .aw-logo{
-    margin: auto;
-  }
-  body{
-    width:100%;
-    margin:0;
-    padding:0;
-  }
+
+.sticky {
+  position: fixed !important;
+  top: 0;
+  width: 100% !important;
+  padding-top: 10px;
+  z-index: 1;
+}
+
+.submit-max{
+  width:16rem;
+  height:7rem; 
+  font-size: 10px; 
+  background-color:#49c5b6; 
+  border-radius:0;
+  margin-right: -30%;
+  float: right;
+}
+
+.navbar-text{
+  font-weight:550;
+}
+
+#english{
+  float:left;
+}
+
+.fab{
+  color:black;
+  padding:4.5px;
+  font-size:1.5rem;
+}
+
+.links{
+  margin-right:-34%;
+}
