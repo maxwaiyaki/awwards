@@ -9,7 +9,6 @@ body{
   }
   .circle {
       width: 110px;
-    /* margin: 1px 1px 1px; */
     display: inline-block;
     position: relative;
     text-align: center;
@@ -71,21 +70,8 @@ body{
     color:white;
     font-weight:100;
   }
-  .container{
-    margin-top: 20px;
-    margin-left: 55px;
   
-  }
-  .date{
-    float: right;
-  }
   
-  .card-img-top{
-    border-radius:0;
-    height:300px;
-    width: 400px;
-    max-width: none;
-  }
   .card-img-top-directory{
     border-radius:0;
     height:180px;
@@ -123,7 +109,7 @@ body{
       margin-top: -50px;
       margin-left: 120px;
   }
-  .directory-image img {
+  /* .directory-image img {
     width: 90px;
     height: 90px;
     background-size: cover;
@@ -131,10 +117,9 @@ body{
     border-radius: 100px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
-  }
-  .profile-image {
-  }
-  .profile-image img {
+  } */
+  
+  /* .profile-image img {
     margin-top: 40px;
     width: 100px;
     height: 100px;
@@ -142,21 +127,8 @@ body{
     border-radius: 100px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
-  }
-  .pages{
-    margin-top: 25px;
-    display: inline-flex;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content:center;
-  }
-  .bold{
-    font-weight: bold;
-  }
+  } */
+  
   .professional{
     font-size: 40px;
     font-weight:bold;
@@ -171,14 +143,14 @@ body{
     margin-bottom: 3px;
   }
   
-  .screenshot-img{
+  /* .screenshot-img{
     border-radius:0;
     height:800px;
     width: 1350px;
     max-width: none;
     margin-bottom: 25px;
     margin-left: 14%;
-  }
+  } */
   #votes-form{
     width:500px;
     margin: auto;

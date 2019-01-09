@@ -13,11 +13,10 @@
 
 {% block content %}
 <div class="carousel-inner">
-   <!-- <div class="landingpage" style="background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url({% static 'img/cocaine.png'%}) fixed;"> -->
    <div class="landingpage" >
       <img src="{{caraousel.landing_page.url}}" class="landingpage-img">
       <div class="time">
-         <p class="text-light"><span class="bold">Site of the day </span>   {{date}}</p>
+         <p class="text-light"><span class="bold">Site of the day </span> {{date}}</p>
       </div>
       <div class="header">
          <a href="/site/{{caraousel.id}}" style="color:white;text-decoration:none;">
@@ -54,15 +53,15 @@
    <div class="row">
       {% for winner in winners %}
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-         <div class="card" style="width: 40.2rem;">
-            <img class="card-img-top img-responsive" src="{{winner.landing_page.url}}" alt="Card image cap" responsive>
+         <div class="card" style="width: 36.3rem;">
+            <img style="height: 24.8rem;" class="img-fluid img-responsive" src="{{winner.landing_page.url}}" alt="Card image cap" responsive>
             <div class="card-body">
                <a href="/site/{{winner.id}}" style="color:black;text-decoration:none;">
                   <h5 class="card-title" style="line-height:28px;">{{winner.title}}</h5>
                </a>
-               <p class="card-text">From {{winner.country}}<span class="date">{{winner.post_date}}</span></p>
+               <p class="card-text">From {{winner.country}}<span class="date">{{winner.post_date|date:"M d, Y"}}</span></p>
             </div>
-            <div class="card-footer ">
+            <div class="card-footer">
                <div class="user-image">
                   <img src="{{winner.avatar.url}}" class="gallery-image" alt=""  width=8 height=8>
                   <a href="/user/{{winner.username}}" style="color:black;text-decoration:none;margin:auto;">
@@ -82,18 +81,18 @@
    <div class="row">
       {% for nominee in nominees %}
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-         <div class="card" style="width: 40.2rem;">
-            <img class="card-img-top img-responsive" src="{{nominee.landing_page.url}}" alt="Card image cap" responsive>
+         <div class="card" style="width: 36.3rem;">
+            <a href="/site/{{nominee.id}}">
+               <img style="width: 36.2rem;" href="/site/{{nominee.id}}" class=" img-fluid img-responsive" src="{{nominee.landing_page.url}}" alt="Card image cap" responsive>
+            </a>
             <div class="card-body">
-               <a href="/site/{{nominee.id}}" style="color:black;text-decoration:none;">
-                  <h5 class="card-title" style="line-height:28px;">{{nominee.title}}</h5>
-               </a>
-               <p class="card-text">From {{nominee.country}}<span class="date">{{nominee.post_date}}</span></p>
+               <h5 class="card-title" style="line-height:28px;"><a href="/site/{{nominee.id}}" style="color:black;text-decoration:none;">{{nominee.title}}</a></h5>
+               <p class="card-text">From {{nominee.country}}<span class="date">{{nominee.post_date|date:"M d, Y"}}</span></p>
             </div>
             <div class="card-footer ">
                <div class="user-image">
                   <img src="{{nominee.avatar.url}}" class="gallery-image" alt=""  width=8 height=8>
-                  <a href="/user/{{nominee.username}}" style="color:black;text-decoration:none;margin:auto;">
+                  <a href="/user/{{nominee.username}}" class="bold" style="color:black;text-decoration:none;margin:auto;">
                      <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;text-transform: uppercase;">{{nominee.username}}</p>
                   </a>
                </div>
@@ -110,18 +109,18 @@
    <div class="row">
       {% for directory in directories %}
       <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-         <div class="card" style="width: 40.2rem;">
-            <img class="card-img-top img-responsive" src="{{directory.landing_page.url}}" alt="Card image cap" responsive>
+         <div class="card" style="width: 36.3rem;">
+            <a href="/site/{{directory.id}}">
+               <img style="width: 36.2rem;" href="/site/{{directory.id}}" class=" img-fluid img-responsive" src="{{directory.landing_page.url}}" alt="Card image cap" responsive>
+            </a>
             <div class="card-body">
-               <a href="/site/{{directory.id}}" style="color:black;text-decoration:none;">
-                  <h5 class="card-title" style="line-height:28px;">{{directory.title}}</h5>
-               </a>
-               <p class="card-text">From {{directory.country}}<span class="date">{{directory.post_date}}</span></p>
+               <h5 class="card-title" style="line-height:28px;"><a href="/site/{{directory.id}}" style="color:black;text-decoration:none;">{{directory.title}}</a></h5>
+               <p class="card-text">From {{directory.country}}<span class="date">{{directory.post_date|date:"M d, Y"}}</span></p>
             </div>
             <div class="card-footer ">
                <div class="user-image">
                   <img src="{{directory.avatar.url}}" class="gallery-image" alt=""  width=8 height=8>
-                  <a href="/user/{{directory.username}}" style="color:black;text-decoration:none;margin:auto;">
+                  <a href="/user/{{directory.username}}" class="bold" style="color:black;text-decoration:none;margin:auto;">
                      <p style="font-size: 13px; font-weight: lighter;margin:auto; padding:2px;text-transform: uppercase;">{{directory.username}}</p>
                   </a>
                </div>
